@@ -18,10 +18,10 @@ echo 'DOCKER_OPTS="-e lxc"' >> /etc/default/docker
 sudo service docker restart
 
 # Install the startup script
-git clone https://github.com/asherjohnsonibm/mi_provisioning/issuerserver /usr/share/mi_startup
-mv /usr/share/mi_startup/issuerserver_startup.sh /usr/bin/
+git clone https://github.com/asherjohnsonibm/mi_provisioning/ /usr/share/mi_startup
+mv /usr/share/mi_startup/centralserver/mi_centralserver_startup.sh /usr/bin/
 rm -rf /etc/rc.local
-mv /usr/share/mi_startup/rc.local /etc/
+mv /usr/share/mi_startup/centralserver/rc.local /etc/
 rm -rf /usr/share/mi_startup/
 
 # Startup the etcd container

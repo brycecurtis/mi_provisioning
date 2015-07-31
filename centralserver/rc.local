@@ -14,6 +14,6 @@
 # Turn of sg for network interfaces.
 /sbin/ethtool -K eth0 sg off
 /sbin/ethtool -K eth1 sg off
-/usr/bin/mi_issuerserver_startup.sh
+/usr/bin/mi_centralserver_startup.sh
 
 exit 0
