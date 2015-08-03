@@ -115,7 +115,7 @@ fi
 # Startup Account Management Server
 docker start MI_AMS
 counter=0
-while [[ "`curl -sL localhost:9291/AccountManagementServer/api/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9291/AccountManager/api/ping`" != "ping" && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
