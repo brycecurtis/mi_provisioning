@@ -76,7 +76,7 @@ sleep 10s
 # Startup Certificate Management Server
 docker start MI_CMS
 counter=0
-while [[ "`curl -sL localhost:9292/cms/api/v1/cmd/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9292/cms/api/v1/cmd/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
@@ -89,7 +89,7 @@ fi
 # Startup Multipurpose Messaging Queue
 docker start MI_MPMQ
 counter=0
-while [[ "`curl -sL localhost:9293/MPMQ/api/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9293/MPMQ/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
@@ -102,7 +102,7 @@ fi
 # Startup APNS Server
 docker start MI_APNS
 counter=0
-while [[ "`curl -sL localhost:9290/APNS/api/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9290/IBMAPNS/api/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
@@ -115,7 +115,7 @@ fi
 # Startup Account Management Server
 docker start MI_AMS
 counter=0
-while [[ "`curl -sL localhost:9291/AccountManager/api/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9291/AccountManager/api/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))

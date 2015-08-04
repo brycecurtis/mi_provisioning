@@ -76,7 +76,7 @@ sleep 10s
 # Startup Certificate Management Server
 docker start MI_CMS
 counter=0
-while [[ "`curl -sL localhost:9292/cms/api/v1/cmd/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9292/cms/api/v1/cmd/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
@@ -89,7 +89,7 @@ fi
 # Startup Configuration Management Server
 docker start MI_CONFIGURATIONMANAGER
 counter=0
-while [[ "`curl -sL localhost:9294/ConfigurationManager/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9294/ConfigurationManager/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
@@ -106,7 +106,7 @@ docker start MI_DIGISTORAGE
 # Startup Document Generator Server
 docker start MI_DOCUMENTGENERATOR
 counter=0
-while [[ "`curl -sL localhost:9298/DocumentGenerator/api/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9298/DocumentGenerator/api/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
@@ -119,7 +119,7 @@ fi
 # Startup Branding Server
 docker start MI_BRANDING
 counter=0
-while [[ "`curl -sL localhost:9296/branding/cmd/ping`" != "ping" && $counter < $numberoftries ]]
+while [[ "`curl -sL localhost:9296/branding/cmd/ping`" != ping* && $counter < $numberoftries ]]
 do
         sleep 5s
         (( counter++ ))
