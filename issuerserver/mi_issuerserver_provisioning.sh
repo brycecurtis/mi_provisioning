@@ -24,7 +24,7 @@ apt-get -y update
 apt-get -y install docker-ce=17.03.2~ce-0~ubuntu-trusty
 
 # Install the startup script
-git clone https://github.com/asherjohnsonibm/mi_provisioning/ /usr/share/mi_startup
+git clone https://github.com/brycecurtis/mi_provisioning/ /usr/share/mi_startup
 mv /usr/share/mi_startup/issuerserver/mi_issuerserver_startup.sh /usr/bin/
 rm -rf /etc/rc.local
 mv /usr/share/mi_startup/issuerserver/rc.local /etc/
