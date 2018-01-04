@@ -10,7 +10,18 @@ sed -i -e "s/PasswordAuthentication [y|Y]es/PasswordAuthentication no/g" /etc/ss
 service ssh restart 
 
 # Install Latest Ubuntu Trusty Docker Package
-curl -sSL https://get.docker.com/ | sh
+#curl -sSL https://get.docker.com/ | sh
+
+# Install Docker 17.03.2 with aufs
+apt-get -y update
+apt-get -y install linux-image-extra-$(uname -r) linux-image-extra-virtual
+apt-get -y update
+apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+apt-key fingerprint 0EBFCD88
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get -y update
+apt-get -y install docker-ce=17.03.2~ce-0~ubuntu-trusty
 
 # Install the startup script
 git clone https://github.com/asherjohnsonibm/mi_provisioning/ /usr/share/mi_startup
